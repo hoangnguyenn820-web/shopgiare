@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Web của Hoàng</title>
+    <title>Website giare</title>
 
     <style>
         body {
@@ -69,63 +69,124 @@
             background: #0056d6;
         }
 
-        .form-box {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 30px;
-            width: 380px;
-            margin: 30px auto 0;
-            border-radius: 16px;
-        }
+     .form-box {
+        background: rgba(255, 255, 255, 0.04);        
+        padding: 35px;
+        width: 420px;
+        margin: 40px auto 0;
+        border-radius: 18px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
 
-        .form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-        }
+    .form-desc {
+        color: #94a3b8;
+        margin-bottom: 20px;
+        font-size: 16px;
+}
 
-        .form input {
-            width: 320px;
-            padding: 14px 16px;
-            border-radius: 10px;
-            border: 1px solid transparent;
-            outline: none;
-            background: #1e293b;
-            color: white;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+}
 
-        .form input::placeholder {
-            color: #94a3b8;
-        }
+.form input,
+.form textarea {
+    width: 360px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    outline: none;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
 
-        .form input:focus {
-            border: 1px solid #38bdf8;
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
-        }
+.form textarea {
+    min-height: 110px;
+    resize: none;
+}
 
-        .form button {
-            width: 320px;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: #22c55e;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.form input::placeholder,
+.form textarea::placeholder {
+    color: #94a3b8;
+}
 
-        .form button:hover {
-            background: #16a34a;
-            transform: scale(1.03);
-        }
+.form input:focus,
+.form textarea:focus {
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+.form button {
+    width: 360px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #22c55e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background: #16a34a;
+    transform: scale(1.02);
+}
 
         a {
             text-decoration: none;
         }
+            .chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .chat-btn:hover {
+          transform: scale(1.1);
+}
+
+    .fb {
+          background: #1877f2;
+}
+
+    .zalo {
+          background: #0068ff;
+}
+    @keyframes blink {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+}
+
+    .chat-btn {
+          animation: blink 2s infinite;
+}
+.chat-btn {
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
     </style>
 </head>
 
@@ -160,32 +221,58 @@
     <p>💸 Full: 1.5 triệu (full chức năng)</p>
 
     <div class="form-box">
-        <h2>Để lại thông tin</h2>
-
-        <div class="form">
-            <input type="text" id="name" placeholder="👤 Tên của bạn">
-            <input type="text" id="phone" placeholder="📞 Số điện thoại">
-            <button onclick="send()">Gửi</button>
-        </div>
+    <h2>Nhận tư vấn miễn phí</h2>
+    <p class="form-desc">Nhập thông tin, mình sẽ liên hệ lại sớm nhất 🚀</p>
+    <p style="color:#facc15; font-size:14px;">⚡ Chỉ nhận 5 khách mỗi ngày</p>
+    <div class="form">
+        <input type="text" id="name" placeholder="👤 Tên của bạn">
+        <input type="text" id="phone" placeholder="📞 Số điện thoại">
+        <textarea id="note" placeholder="📝 Bạn cần web kiểu gì?"></textarea>
+        <button onclick="send()">Gửi thông tin</button>
     </div>
+</div>
+    <div class="chat-box">
+            <a href="https://m.me/hoangdzvlhehe" target="_blank">
+            <div class="chat-btn fb">💬</div>
+          </a>
 
-    <script>
-        function send() {
-            let name = document.getElementById("name").value;
-            let phone = document.getElementById("phone").value;
+            <a href="https://zalo.me/0877046190" target="_blank">
+            <div class="chat-btn zalo">📞</div>
+          </a>
+    </div>
+        <script>
+function send() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let note = document.getElementById("note").value;
 
-            if (name === "") {
-                alert("Vui lòng nhập tên");
-                return;
-            }
+    if (name === "") {
+        alert("Vui lòng nhập tên");
+        return;
+    }
 
-            if (phone === "") {
-                alert("Vui lòng nhập số điện thoại");
-                return;
-            }
+    if (phone === "") {
+        alert("Vui lòng nhập số điện thoại");
+        return;
+    }
 
-            alert("Đã gửi! Tao sẽ liên hệ mày sớm 😎");
-        }
-    </script>
+    let message =
+        "🔥 KHÁCH MỚI!\n\n" +
+        "👤 Tên: " + name + "\n" +
+        "📞 SĐT: " + phone + "\n" +
+        "📝 Ghi chú: " + note;
+
+    let token = "8692835568:AAF7ne98O2zJQg9lVcoQVZSagrJNbrg1h6k";
+    let chat_id = "7959086425";
+
+    let url = "https://api.telegram.org/bot" + token +
+              "/sendMessage?chat_id=" + chat_id +
+              "&text=" + encodeURIComponent(message);
+
+    fetch(url);
+
+    alert("🔥 Đã gửi! Mình sẽ liên hệ ngay 😎");
+}
+</script>
 </body>
 </html>
