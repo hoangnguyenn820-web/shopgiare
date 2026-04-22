@@ -227,6 +227,7 @@
     <div class="form">
         <input type="text" id="name" placeholder="👤 Tên của bạn">
         <input type="text" id="phone" placeholder="📞 Số điện thoại">
+        <input type="text" id="note" placeholder="📝 Ghi chú">
         <textarea id="note" placeholder="📝 Bạn cần web kiểu gì?"></textarea>
         <button onclick="send()">Gửi thông tin</button>
     </div>
@@ -262,17 +263,21 @@ function send() {
         "📞 SĐT: " + phone + "\n" +
         "📝 Ghi chú: " + note;
 
-    let token = "8683934603:AAFgqr8_v6gM65L5vf7eeunhQkeFlb0FhvE";
+    let token = "8683934603:AAGoiytGHmWDV75b6tJopmaW44z-LlB3c6g";
     let chat_id = "8256746168";
 
     let url = "https://api.telegram.org/bot" + token +
               "/sendMessage?chat_id=" + chat_id +
               "&text=" + encodeURIComponent(message);
 
-    fetch(url);
-
-    alert("🔥 Đã gửi! Mình sẽ liên hệ ngay 😎");
-}
+    fetch(url)
+        .then(() => {
+            alert("✅ Đã gửi thông tin!");
+        })
+        .catch(() => {
+            alert("❌ Lỗi gửi!");
+        });
+} //
 </script>
 </body>
 </html>
