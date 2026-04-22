@@ -228,7 +228,7 @@
         <input type="text" id="name" placeholder="👤 Tên của bạn">
         <input type="text" id="phone" placeholder="📞 Số điện thoại">
         <input type="text" id="note" placeholder="📝 Ghi chú">
-        <textarea id="note" placeholder="📝 Bạn cần web kiểu gì?"></textarea>
+        <textarea id="note2" placeholder="📝 Bạn cần web kiểu gì?"></textarea>
         <button onclick="send()">Gửi thông tin</button>
     </div>
 </div>
@@ -246,6 +246,7 @@ function send() {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
     let note = document.getElementById("note").value;
+    let note2 = document.getElementById("note2").value;
 
     if (name === "") {
         alert("Vui lòng nhập tên");
@@ -256,12 +257,15 @@ function send() {
         alert("Vui lòng nhập số điện thoại");
         return;
     }
+    let time = new Date().toLocaleString();
 
     let message =
         "🔥 KHÁCH MỚI!\n\n" +
         "👤 Tên: " + name + "\n" +
         "📞 SĐT: " + phone + "\n" +
-        "📝 Ghi chú: " + note;
+        "📝 Ghi chú: " + note + "\n" +
+        "💡 Nhu cầu: " + note2 + "\n" +
+        "⏰ Thời gian: " + time;
 
     let token = "8683934603:AAGoiytGHmWDV75b6tJopmaW44z-LlB3c6g";
     let chat_id = "8256746168";
@@ -269,13 +273,25 @@ function send() {
     let url = "https://api.telegram.org/bot" + token +
               "/sendMessage?chat_id=" + chat_id +
               "&text=" + encodeURIComponent(message);
+    let btn = document.querySelector(".form button");
+    btn.disabled = true;
+    btn.innerText = "Đang gửi...";
 
     fetch(url)
         .then(() => {
             alert("✅ Đã gửi thông tin!");
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("note").value = "";
+            document.getElementById("note2").value = "";
+            btn.disabled = false;
+            btn.innerText = "Gửi thông tin";
         })
         .catch(() => {
             alert("❌ Lỗi gửi!");
+        btn.disabled = false;
+        btn.innerText = "Gửi thông tin";
+
         });
 } //
 </script>
