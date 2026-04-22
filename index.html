@@ -69,135 +69,147 @@
             background: #0056d6;
         }
 
-     .form-box {
-        background: rgba(255, 255, 255, 0.04);        
-        padding: 35px;
-        width: 420px;
-        margin: 40px auto 0;
-        border-radius: 18px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-}
+        .form-box {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 35px;
+            width: 420px;
+            margin: 40px auto 0;
+            border-radius: 18px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+        }
 
-    .form-desc {
-        color: #94a3b8;
-        margin-bottom: 20px;
-        font-size: 16px;
-}
+        .form-desc {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
 
-    .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 14px;
-}
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
 
-.form input,
-.form textarea {
-    width: 360px;
-    padding: 14px 16px;
-    border-radius: 12px;
-    border: 1px solid transparent;
-    outline: none;
-    background: #1e293b;
-    color: white;
-    font-size: 16px;
-    transition: 0.3s;
-    box-sizing: border-box;
-}
+        .form input,
+        .form textarea {
+            width: 360px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            outline: none;
+            background: #1e293b;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
 
-.form textarea {
-    min-height: 110px;
-    resize: none;
-}
+        .form textarea {
+            min-height: 110px;
+            resize: none;
+        }
 
-.form input::placeholder,
-.form textarea::placeholder {
-    color: #94a3b8;
-}
+        .form input::placeholder,
+        .form textarea::placeholder {
+            color: #94a3b8;
+        }
 
-.form input:focus,
-.form textarea:focus {
-    border: 1px solid #38bdf8;
-    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
-}
+        .form input:focus,
+        .form textarea:focus {
+            border: 1px solid #38bdf8;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+        }
 
-.form button {
-    width: 360px;
-    padding: 15px;
-    border: none;
-    border-radius: 12px;
-    background: #22c55e;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        /* NÚT ĐẸP */
+        .form button {
+            width: 360px;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #22c55e, #4ade80);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+        }
 
-.form button:hover {
-    background: #16a34a;
-    transform: scale(1.02);
-}
+        .form button:hover {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
 
         a {
             text-decoration: none;
         }
-            .chat-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
-.chat-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        /* CHAT BOX */
+        .chat-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    .chat-btn:hover {
-          transform: scale(1.1);
-}
+        .chat-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: blink 2s infinite;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
 
-    .fb {
-          background: #1877f2;
-}
+        .chat-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 25px rgba(255,255,255,0.3);
+        }
 
-    .zalo {
-          background: #0068ff;
-}
-    @keyframes blink {
-          0% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-          100% { transform: scale(1); }
-}
+        .fb {
+            background: #1877f2;
+        }
 
-    .chat-btn {
-          animation: blink 2s infinite;
-}
-.chat-btn {
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
+        .zalo {
+            background: #0068ff;
+        }
+
+        @keyframes blink {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 
 <body>
+
     <h1>Nhận thiết kế website giá rẻ chỉ từ 300k</h1>
     <p>👉 Có web trong 1-2 ngày | Hỗ trợ tận tình | Giá sinh viên</p>
     <p>Nhận làm web cho shop, cá nhân… 💸</p>
 
+    <p style="color:#22c55e; font-weight:bold;">
+        ✔ Có demo web thực tế, làm nhanh theo yêu cầu
+    </p>
+
     <div class="contact-group">
         <a href="https://m.me/hoangdzvlhehe" target="_blank">
-    <button class="contact-btn fb-btn">Nhắn Messenger</button>
+            <button class="contact-btn fb-btn">Nhắn Messenger</button>
         </a>
 
         <a href="https://zalo.me/0877046190" target="_blank">
@@ -205,43 +217,35 @@
         </a>
     </div>
 
-    <h2>Tại sao chọn mình?</h2>
-    <p>✔ Thiết kế nhanh – có web trong 1-2 ngày</p>
-    <p>✔ Giá rẻ cho người mới bắt đầu</p>
-    <p>✔ Hỗ trợ tận tình</p>
-
-    <h2>Dịch vụ</h2>
-    <p>🌐 Website bán hàng</p>
-    <p>📱 Website cá nhân</p>
-    <p>🏪 Website cho shop</p>
-
     <h2>Bảng giá</h2>
-    <p>💸 Cơ bản: 300k (web đơn giản, 1 trang)</p>
-    <p>💸 Nâng cao: 800k (có nhiều mục, đẹp hơn)</p>
-    <p>💸 Full: 1.5 triệu (full chức năng)</p>
+    <p>💸 Cơ bản: 300k</p>
+    <p>💸 Nâng cao: 800k</p>
+    <p>💸 Full: 1.5 triệu</p>
 
     <div class="form-box">
-    <h2>Nhận tư vấn miễn phí</h2>
-    <p class="form-desc">Nhập thông tin, mình sẽ liên hệ lại sớm nhất 🚀</p>
-    <p style="color:#facc15; font-size:14px;">⚡ Chỉ nhận 5 khách mỗi ngày</p>
-    <div class="form">
-        <input type="text" id="name" placeholder="👤 Tên của bạn">
-        <input type="text" id="phone" placeholder="📞 Số điện thoại">
-        <input type="text" id="note" placeholder="📝 Ghi chú">
-        <textarea id="note2" placeholder="📝 Bạn cần web kiểu gì?"></textarea>
-        <button id="sendBtn" onclick="send()">Gửi thông tin</button>
-    </div>
-</div>
-    <div class="chat-box">
-            <a href="https://m.me/hoangdzvlhehe" target="_blank">
-            <div class="chat-btn fb">💬</div>
-          </a>
+        <h2>Nhận tư vấn miễn phí</h2>
+        <p class="form-desc">Nhập thông tin, mình sẽ liên hệ lại sớm nhất 🚀</p>
 
-            <a href="https://zalo.me/0877046190" target="_blank">
-            <div class="chat-btn zalo">📞</div>
-          </a>
+        <div class="form">
+            <input type="text" id="name" placeholder="👤 Tên của bạn">
+            <input type="text" id="phone" placeholder="📞 Số điện thoại">
+            <input type="text" id="note" placeholder="📝 Ghi chú">
+            <textarea id="note2" placeholder="💡 Bạn cần web kiểu gì?"></textarea>
+            <button id="sendBtn" onclick="send()">Gửi thông tin</button>
+        </div>
     </div>
-        <script>
+
+    <div class="chat-box">
+        <a href="https://m.me/hoangdzvlhehe" target="_blank">
+            <div class="chat-btn fb">💬</div>
+        </a>
+
+        <a href="https://zalo.me/0877046190" target="_blank">
+            <div class="chat-btn zalo">📞</div>
+        </a>
+    </div>
+
+<script>
 function send() {
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
@@ -257,6 +261,7 @@ function send() {
         alert("Vui lòng nhập số điện thoại");
         return;
     }
+
     let time = new Date().toLocaleString();
 
     let message =
@@ -267,33 +272,42 @@ function send() {
         "💡 Nhu cầu: " + note2 + "\n" +
         "⏰ Thời gian: " + time;
 
-    let token = "8683934603:AAGoiytGHmWDV75b6tJopmaW44z-LlB3c6g";
+    let token = "8683934603:AAGDnjaiBUgEJ_PNXjh6uxk3UnT-c03KGPs";
     let chat_id = "8256746168";
 
     let url = "https://api.telegram.org/bot" + token +
               "/sendMessage?chat_id=" + chat_id +
               "&text=" + encodeURIComponent(message);
+
     let btn = document.getElementById("sendBtn");
     btn.disabled = true;
-    btn.innerText = "Đang gửi...";
+    btn.innerHTML = "⏳ Đang gửi...";
 
     fetch(url)
         .then(() => {
             alert("✅ Đã gửi thông tin!");
+
             document.getElementById("name").value = "";
             document.getElementById("phone").value = "";
             document.getElementById("note").value = "";
             document.getElementById("note2").value = "";
-            btn.disabled = false;
-            btn.innerText = "Gửi thông tin";
+
+            btn.innerHTML = "✅ Đã gửi!";
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = "Gửi thông tin";
+            }, 1500);
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
         })
         .catch(() => {
             alert("❌ Lỗi gửi!");
-        btn.disabled = false;
-        btn.innerText = "Gửi thông tin";
-
+            btn.disabled = false;
+            btn.innerHTML = "Gửi thông tin";
         });
-} //
+}
 </script>
+
 </body>
 </html>
