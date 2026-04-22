@@ -229,7 +229,7 @@
         <input type="text" id="phone" placeholder="📞 Số điện thoại">
         <input type="text" id="note" placeholder="📝 Ghi chú">
         <textarea id="note2" placeholder="📝 Bạn cần web kiểu gì?"></textarea>
-        <button onclick="send()">Gửi thông tin</button>
+        <button id="sendBtn" onclick="send()">Gửi thông tin</button>
     </div>
 </div>
     <div class="chat-box">
@@ -273,7 +273,7 @@ function send() {
     let url = "https://api.telegram.org/bot" + token +
               "/sendMessage?chat_id=" + chat_id +
               "&text=" + encodeURIComponent(message);
-    let btn = document.querySelector(".form button");
+    let btn = document.getElementById("sendBtn");
     btn.disabled = true;
     btn.innerText = "Đang gửi...";
 
